@@ -5,20 +5,9 @@ let divisor = 0;
 
 function iniciar() {
   slide.style.width = `calc(100vw * ${slideItems.length})`;
-  // currentSlider = 0;
-  // slide.style.marginLeft = "-0px";
   let main = document.querySelector("main").clientWidth;
-  if (main > 950) {
-    divisor = 5;
-  } else if (main > 810) {
-    divisor = 4;
-  } else if (main > 600) {
-    divisor = 3;
-  } else if (main > 350) {
-    divisor = 2;
-  } else if (main < 350) {
-    divisor = 1;
-  }
+  let item = document.querySelector(".slide-item").clientWidth;
+  divisor = Math.round(main / item);
 }
 
 window.addEventListener("resize", () => {
